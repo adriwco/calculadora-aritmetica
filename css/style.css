@@ -63,23 +63,41 @@ body{
 .conteudo button:hover{
   background: #323234
 }
+#bcleanlast,
+#bparent,
+#bclean,
+#bdiv, 
+#bmult, 
+#bsubt, 
+#badic, 
+#badic, 
 .aritmeticos{
   background: #323234 !important;
 }
+#bcleanlast:hover,
+#bparent:hover,
+#bclean:hover, 
+#bdiv:hover, 
+#bmult:hover, 
+#bsubt:hover, 
+#badic:hover, 
+#badic:hover, 
 .aritmeticos:hover{
   background: #3b3b3c !important;
 }
-.start{
+#start{
   background: #fec63e !important;
   color: black !important;
 }
-.start:hover{
+#start:hover{
   background: #e6b649 !important;
 }
-.texto{
+#btext{
   font-size: 1rem;
+  transition: 1s;
 }
-.texto:hover{
+#btext:hover{
   font-size: 1.5rem;
   color: red;
+  transition: 1s;
 }
