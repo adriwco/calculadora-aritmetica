@@ -14,11 +14,10 @@ onload = () =>{
   document.getElementById("bsubt").onclick = () => display("-");
   document.getElementById("badic").onclick = () => display("+");
   document.getElementById("bvirg").onclick = () => display(",");
-  document.getElementById("start").onclick = () => display("=");
   document.getElementById("bclean").onclick = () => limpar();
   document.getElementById("start").onclick = () => calculo();
   document.getElementById("bcleanlast").onclick = () => cleanlast();
-  /* document.getElementById("inverter").onclick = () => inverter(); */
+  document.getElementById("inverter").onclick = () => inverter();
   document.getElementById("bparent").onclick = () => parenteses();
 }
 var resultado = document.getElementById("numeros");
@@ -46,21 +45,15 @@ function parenteses(){
     }
   }
 }
-/*
+
 function inverter(){
    const valorInicial = resultado.innerHTML;
-   const caracteres = valorInicial.substring(valorInicial.indexOf("+") +1);
-   const valorFinal = (caracteres * (-1));
-   const total = parseFloat(valorInicial.substring(0,valorInicial.indexOf("+")).concat(valorFinal));
+   const numero = valorInicial.substring(valorInicial.lastIndexOf("+") + 1);
+   const valorFinal = numero * (-1);
+   const total = valorInicial.substring(0,valorInicial.lastIndexOf("+")).concat(valorFinal);
    resultado.innerHTML = total;
-   if (isNaN(total)){
-  const caracteres = valorInicial.substring(valorInicial.indexOf("-") +1);
-  const valorFinal = (caracteres * (-1));
-  const total = valorInicial.substring(0,valorInicial.indexOf("+")).concat(valorFinal);
-  resultado.innerHTML = total;
-   }
 }
-*/
+
 function cleanlast(){
   const string = resultado.innerHTML;
   resultado.innerHTML = string.slice(0, -1);
