@@ -26,16 +26,13 @@ function limpar(){
   resultado.innerHTML = "";
 }
 
-function display(value){
-  resultado.innerHTML += value;
-}
 
 function parenteses(){
   const string = resultado.innerHTML;  
   const e = string.lastIndexOf("(");
   const ee = string.lastIndexOf(")");
-    if (e == -1){
-      resultado.innerHTML += "(";
+  if (e == -1){
+    resultado.innerHTML += "(";
     }else{
       if(e > ee){
         resultado.innerHTML += ")";
@@ -46,11 +43,11 @@ function parenteses(){
 }
 
 function inverter(){
-   const valorInicial = resultado.innerHTML;
-   const numero = valorInicial.substring(valorInicial.lastIndexOf("+") + 1);
-   const valorFinal = numero * (-1);
-   const total = valorInicial.substring(0,valorInicial.lastIndexOf("+")).concat(valorFinal);
-   resultado.innerHTML = total;
+  const valorInicial = resultado.innerHTML;
+  const numero = valorInicial.substring(valorInicial.lastIndexOf("-") + 1);
+  const valorFinal = -numero * (-1);
+  const total = valorInicial.substring(0,valorInicial.lastIndexOf("-")).concat("+"+valorFinal);
+  resultado.innerHTML = total; 
 }
 
 function cleanlast(){
@@ -58,9 +55,49 @@ function cleanlast(){
   resultado.innerHTML = string.slice(0, -1);
 }
 
-function calculo(){
-  const p = resultado.innerHTML;
-  const q = eval(p);
-  resultado.innerHTML = q;
+function display(value){
+  resultado.innerHTML += value;
 }
+
+function calculo(){
+  const r = resultado.innerHTML; 
+  var op1 = r.indexOf("+");
+  var op2 = r.indexOf("-");
+  var op3 = r.indexOf("*");
+  var op4 = r.indexOf("/");
+  /*var quantidade = 0;*/
+
+  if(op1 == -1 && op2 == -1 && op3 == -1 && op4 == -1){
+
+    let resultaofinal = eval(resultado.innerHTML) + eval(resultado.innerHTML);
+    resultado.innerHTML = resultaofinal;
+
+  }else if(op1 == -1 && op2 !== -1 && op3 == -1 && op4 == -1){ // op2 !== -1
+
+    if (op2 == 0){
+    let resultaofinal = eval(resultado.innerHTML) + eval(resultado.innerHTML);
+    resultado.innerHTML = resultaofinal;
+    }else{
+    resultado.innerHTML = eval(resultado.innerHTML);
+    }
+    
+  }
+  else{
+    resultado.innerHTML = eval(resultado.innerHTML);
+  }
+  
+  
+  /*
+  else if(op1 == -1 && op2 !== -1 && op3 == -1 && op4 == -1){
+
+    for (var i = 0; i < frase.length; i++) {
+      if (frase[i] == op1) {
+        quantidade++
+      }
+    }
+
+   */
+
+}
+
 
