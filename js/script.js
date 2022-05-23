@@ -29,11 +29,11 @@ function limpar(){
 function display(value){
   resultado.innerHTML += value;
 }
+
 function parenteses(){
   const string = resultado.innerHTML;  
   const e = string.lastIndexOf("(");
   const ee = string.lastIndexOf(")");
-  for(let i = 1; i<=1; i++){
     if (e == -1){
       resultado.innerHTML += "(";
     }else{
@@ -43,7 +43,6 @@ function parenteses(){
         resultado.innerHTML += "(";
       }
     }
-  }
 }
 
 function inverter(){
