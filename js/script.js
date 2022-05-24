@@ -13,7 +13,7 @@ onload = () =>{
   document.getElementById("bmult").onclick = () => display("*");
   document.getElementById("bsubt").onclick = () => display("-");
   document.getElementById("badic").onclick = () => display("+");
-  document.getElementById("bvirg").onclick = () => display(",");
+  document.getElementById("bvirg").onclick = () => display(".");
   document.getElementById("bclean").onclick = () => limpar();
   document.getElementById("start").onclick = () => calculo();
   document.getElementById("bcleanlast").onclick = () => cleanlast();
@@ -25,7 +25,6 @@ var resultado = document.getElementById("numeros");
 function limpar(){
   resultado.innerHTML = "";
 }
-
 
 function parenteses(){
   const string = resultado.innerHTML;  
@@ -60,44 +59,57 @@ function display(value){
 }
 
 function calculo(){
-  const r = resultado.innerHTML; 
+  var r = resultado.innerHTML; 
   var op1 = r.indexOf("+");
   var op2 = r.indexOf("-");
   var op3 = r.indexOf("*");
   var op4 = r.indexOf("/");
-  /*var quantidade = 0;*/
 
-  if(op1 == -1 && op2 == -1 && op3 == -1 && op4 == -1){
+  if(op1 && op2 && op3 && op4 == -1){ // op1 !== -1  !(+-*/)
 
-    let resultaofinal = eval(resultado.innerHTML) + eval(resultado.innerHTML);
+    let resultaofinal = eval(resultado.innerHTML) + (eval(resultado.innerHTML));
     resultado.innerHTML = resultaofinal;
 
-  }else if(op1 == -1 && op2 !== -1 && op3 == -1 && op4 == -1){ // op2 !== -1
+  }else if((op1 && op3 && op4 == -1) && (op2 !== -1)){ // op2 !== -1  (-)
 
     if (op2 == 0){
-    let resultaofinal = eval(resultado.innerHTML) + eval(resultado.innerHTML);
+    let resultaofinal = eval(resultado.innerHTML) + (eval(resultado.innerHTML));
     resultado.innerHTML = resultaofinal;
+    }else{
+    resultado.innerHTML = eval(resultado.innerHTML);
+    }
+    
+  }else if((op1 && op2 && op4 == -1) && (op3 !== -1)){ // op3 !== -1  (*)
+
+    if (op3 == 0){
+    resultado.innerHTML = "0";
     }else{
     resultado.innerHTML = eval(resultado.innerHTML);
     }
     
   }
   else{
-    resultado.innerHTML = eval(resultado.innerHTML);
-  }
-  
-  
-  /*
-  else if(op1 == -1 && op2 !== -1 && op3 == -1 && op4 == -1){
 
-    for (var i = 0; i < frase.length; i++) {
-      if (frase[i] == op1) {
-        quantidade++
-      }
+    if(!isNaN(r)){
+      resultado.innerHTML = "0";
+    }else{
+      resultado.innerHTML = eval(resultado.innerHTML);
     }
-
-   */
+  }
 
 }
 
+/* 
+var frase = "o homem é o lobo do homem";
+var letra = "o";
+var quantidade = 0
 
+for (var i = 0; i < frase.length; i++) {
+  if (frase[i] == letra) {
+    quantidade++
+  }
+}
+document.write(quantidade)
+
+// reposta : 4
+*/
