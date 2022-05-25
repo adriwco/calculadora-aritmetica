@@ -17,7 +17,9 @@ onload = () =>{
   document.getElementById("bclean").onclick = () => limpar();
   document.getElementById("start").onclick = () => calculo();
   document.getElementById("bcleanlast").onclick = () => cleanlast();
+  // -(n+n)= -n^2
   document.getElementById("inverter").onclick = () => inverter();
+  // "( )" ou "(" and ")"
   document.getElementById("bparent").onclick = () => parenteses();
 }
 var resultado = document.getElementById("numeros");
@@ -42,11 +44,8 @@ function parenteses(){
 }
 
 function inverter(){
-  const valorInicial = resultado.innerHTML;
-  const numero = valorInicial.substring(valorInicial.lastIndexOf("-") + 1);
-  const valorFinal = -numero * (-1);
-  const total = valorInicial.substring(0,valorInicial.lastIndexOf("-")).concat("+"+valorFinal);
-  resultado.innerHTML = total; 
+  const valorInicial = eval("-("+resultado.innerHTML+")");
+  resultado.innerHTML = valorInicial; 
 }
 
 function cleanlast(){
@@ -59,42 +58,30 @@ function display(value){
 }
 
 function calculo(){
-  var r = resultado.innerHTML; 
-  var op1 = r.indexOf("+");
-  var op2 = r.indexOf("-");
-  var op3 = r.indexOf("*");
-  var op4 = r.indexOf("/");
+  var r = resultado.innerHTML;
+  var op1 = r.indexOf("*");
+  var op2 = r.indexOf("/");
 
-  if(op1 && op2 && op3 && op4 == -1){ // op1 !== -1  !(+-*/)
+  if(op1 && op2 == -1){ // !(*/)
 
-    let resultaofinal = eval(resultado.innerHTML) + (eval(resultado.innerHTML));
-    resultado.innerHTML = resultaofinal;
-
-  }else if((op1 && op3 && op4 == -1) && (op2 !== -1)){ // op2 !== -1  (-)
-
-    if (op2 == 0){
-    let resultaofinal = eval(resultado.innerHTML) + (eval(resultado.innerHTML));
-    resultado.innerHTML = resultaofinal;
-    }else{
     resultado.innerHTML = eval(resultado.innerHTML);
-    }
-    
-  }else if((op1 && op2 && op4 == -1) && (op3 !== -1)){ // op3 !== -1  (*)
 
-    if (op3 == 0){
+  }else if((op2 == -1) && (op1 !== -1)){ // op3 !== -1  (*)
+
+    if (op1 == 0){
     resultado.innerHTML = "0";
     }else{
     resultado.innerHTML = eval(resultado.innerHTML);
     }
     
-  }
-  else{
+  }else{
 
     if(!isNaN(r)){
       resultado.innerHTML = "0";
     }else{
       resultado.innerHTML = eval(resultado.innerHTML);
     }
+    
   }
 
 }
