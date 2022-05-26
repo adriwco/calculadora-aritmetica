@@ -61,29 +61,15 @@ function calculo(){
   var r = resultado.innerHTML;
   var op1 = r.indexOf("*");
   var op2 = r.indexOf("/");
-
-  if(op1 && op2 == -1){ // !(*/)
-
-    resultado.innerHTML = eval(resultado.innerHTML);
-
-  }else if((op2 == -1) && (op1 !== -1)){ // op3 !== -1  (*)
-
-    if (op1 == 0){
+  if((op2 == 0) || (op1 == 0)){ // op1 !== -1  (*)
     resultado.innerHTML = "0";
-    }else{
-    resultado.innerHTML = eval(resultado.innerHTML);
-    }
-    
+  }else if(eval(resultado.innerHTML) == Infinity){
+    resultado.innerHTML = "Inválido..."
+  }else if(isNaN(eval(resultado.innerHTML))){
+    resultado.innerHTML = "Indefinido..."
   }else{
-
-    if(!isNaN(r)){
-      resultado.innerHTML = "0";
-    }else{
-      resultado.innerHTML = eval(resultado.innerHTML);
-    }
-    
+    resultado.innerHTML = eval(resultado.innerHTML);
   }
-
 }
 
 /* 
@@ -99,4 +85,7 @@ for (var i = 0; i < frase.length; i++) {
 document.write(quantidade)
 
 // reposta : 4
+
+
+replece()
 */
