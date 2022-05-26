@@ -18,18 +18,17 @@ onload = () =>{
   document.getElementById("start").onclick = () => calculo();
   document.getElementById("bcleanlast").onclick = () => cleanlast();
   document.getElementById("inverter").onclick = () => inverter();
-  // "( )" ou "(" and ")"
   document.getElementById("bparent").onclick = () => parenteses();
   document.getElementById("abre").onclick = () => display("(");
   document.getElementById("fecha").onclick = () => display(")");
   document.getElementById("elevacao").onclick = () => display("**");
+  document.getElementById("alterar").onclick = () => alterar();
+  document.getElementById("alterar2").onclick = () => alterar2();
 }
 var resultado = document.getElementById("numeros");
-
 function limpar(){
   resultado.innerHTML = "";
 }
-
 function parenteses(){
   const string = resultado.innerHTML;  
   const e = string.lastIndexOf("(");
@@ -44,21 +43,17 @@ function parenteses(){
       }
     }
 }
-
 function inverter(){
   const valorInicial = eval("-("+resultado.innerHTML+")");
   resultado.innerHTML = valorInicial; 
 }
-
 function cleanlast(){
   const string = resultado.innerHTML;
   resultado.innerHTML = string.slice(0, -1);
 }
-
 function display(value){
   resultado.innerHTML += value;
 }
-
 function calculo(){
   var r = resultado.innerHTML;
   var op1 = r.indexOf("*");
@@ -73,21 +68,24 @@ function calculo(){
     resultado.innerHTML = eval(resultado.innerHTML);
   }
 }
-
+function alterar(){
+  var alterar = document.getElementById("separado");
+  alterar.classList.toggle("z_index");
+}
+function alterar2(){
+  var alterar2 = document.getElementById("separado2");
+  alterar2.classList.toggle("z_index");
+}
 /* 
 var frase = "o homem é o lobo do homem";
 var letra = "o";
 var quantidade = 0
-
 for (var i = 0; i < frase.length; i++) {
   if (frase[i] == letra) {
     quantidade++
   }
 }
 document.write(quantidade)
-
 // reposta : 4
-
-
 replece()
 */

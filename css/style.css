@@ -111,16 +111,17 @@ body{
 #parenteses{
   position: relative;
 }
-.separado{
+#separado{
 position: absolute;
 display: grid;
 grid-template-columns: 1fr 1fr;
 width: 100%;
 height: 100%;
 top: 0;
+z-index: -1
 }
 .z_index{
-  z-index: -1;
+  z-index: 2 !important;
 }
 #abre{
   border-right: 1.83px solid black;
@@ -133,7 +134,7 @@ top: 0;
 #abre:hover,#fecha:hover{
   background: #3b3b3c !important;
 }
-.separado span{
+#separado span{
   position: absolute;
   top: 15px;
 }
@@ -211,14 +212,15 @@ top: 0;
   left: 7px;
   top: 4px;
 }
-.separado2{
+#separado2{
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   background: #323234 !important;
+  z-index: -1
 }
-.separado2:hover{
+#separado2:hover{
   background: #3b3b3c !important;
 }
 #elevacao{
@@ -229,7 +231,4 @@ top: 0;
   position: absolute;
   left: 34px;
   top: 18px;
-}
-.z_index2{
-  z-index: -1;
 }
