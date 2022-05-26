@@ -43,7 +43,7 @@ body{
   border: 1px solid #fec63e;
   min-height: 3rem;
   margin: .5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .resultado p{
   font-size: 2.5rem;
@@ -54,6 +54,7 @@ body{
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(4rem,1fr));
   padding: 0.25rem;
+  margin-bottom: 1rem;
 }
 .conteudo button{
   background: #3b3b3c;
@@ -70,7 +71,9 @@ body{
 #bmult, 
 #bsubt, 
 #badic, 
-#badic, 
+#badic,
+#bvirg,
+#inverter, 
 .aritmeticos{
   background: #323234 !important;
 }
@@ -81,11 +84,14 @@ body{
 #bmult:hover, 
 #bsubt:hover, 
 #badic:hover, 
-#badic:hover, 
+#badic:hover,
+#bvirg:hover, 
+#inverter:hover,
 .aritmeticos:hover{
   background: #3b3b3c !important;
 }
 #start{
+  cursor: pointer;
   background: #fec63e !important;
   color: black !important;
 }
@@ -147,4 +153,83 @@ top: 0;
   position: absolute;
   top: 15px;
   left: 30px;
+}
+#alterar{
+  cursor: pointer;
+  position: absolute;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  background: #3b3b3c;
+  border: 3px solid black;
+  top: -13px;
+  left: 45px;
+  z-index: 3;
+  transition: 1s;
+}
+#alterar:hover{
+  background: #fec63e;
+  transition: 1s;
+  color: black;
+}
+#alterar span{
+  position: absolute;
+  left: 3.6px;
+  top: 1px;
+}
+#inverter{
+  height: 100%;
+}
+#inverter span{
+  position: absolute;
+  left: 34px;
+  top: 14px;
+}
+#especial{
+  position: relative;
+}
+#alterar2{
+  cursor: pointer;
+  position: absolute;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  background: #3b3b3c;
+  border: 3px solid black;
+  top: 32px;
+  left: 5px;
+  z-index: 3;
+  transition: 1s;
+}
+#alterar2:hover{
+  background: #fec63e;
+  transition: 1s;
+  color: black;
+}
+#alterar2 span{
+  position: absolute;
+  left: 7px;
+  top: 4px;
+}
+.separado2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: #323234 !important;
+}
+.separado2:hover{
+  background: #3b3b3c !important;
+}
+#elevacao{
+  width: 100%;
+  height: 100%;
+}
+#elevacao span{
+  position: absolute;
+  left: 34px;
+  top: 18px;
+}
+.z_index2{
+  z-index: -1;
 }

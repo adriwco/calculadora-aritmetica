@@ -17,10 +17,12 @@ onload = () =>{
   document.getElementById("bclean").onclick = () => limpar();
   document.getElementById("start").onclick = () => calculo();
   document.getElementById("bcleanlast").onclick = () => cleanlast();
-  // -(n+n)= -n^2
   document.getElementById("inverter").onclick = () => inverter();
   // "( )" ou "(" and ")"
   document.getElementById("bparent").onclick = () => parenteses();
+  document.getElementById("abre").onclick = () => display("(");
+  document.getElementById("fecha").onclick = () => display(")");
+  document.getElementById("elevacao").onclick = () => display("**");
 }
 var resultado = document.getElementById("numeros");
 
@@ -61,7 +63,7 @@ function calculo(){
   var r = resultado.innerHTML;
   var op1 = r.indexOf("*");
   var op2 = r.indexOf("/");
-  if((op2 == 0) || (op1 == 0)){ // op1 !== -1  (*)
+  if((op2 == 0) || (op1 == 0)){
     resultado.innerHTML = "0";
   }else if(eval(resultado.innerHTML) == Infinity){
     resultado.innerHTML = "Inválido..."
