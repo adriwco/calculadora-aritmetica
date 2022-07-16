@@ -76,16 +76,3 @@ function alterar2(){
   var alterar2 = document.getElementById("separado2");
   alterar2.classList.toggle("z_index");
 }
-/* 
-var frase = "o homem é o lobo do homem";
-var letra = "o";
-var quantidade = 0
-for (var i = 0; i < frase.length; i++) {
-  if (frase[i] == letra) {
-    quantidade++
-  }
-}
-document.write(quantidade)
-// reposta : 4
-replece()
-*/
