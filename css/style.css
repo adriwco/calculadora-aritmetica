@@ -7,6 +7,17 @@ body{
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(2,0,36,1) 100%);
   color: white;
 }
+button,#bparent,#inverter,#separado2{
+  border-radius: .5rem;
+}
+#abre,#separado2{
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}
+#fecha{
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+}
 .container{
   width: 20rem;
   margin: 5rem auto;
@@ -44,6 +55,7 @@ body{
   min-height: 3rem;
   margin: .5rem;
   margin-bottom: 2rem;
+  border-radius: .5rem;
 }
 .resultado p{
   font-size: 2.5rem;
