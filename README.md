@@ -7,7 +7,6 @@ Projeto pessoal de calculadora aritmética operações básicas que envolve adi�
 [![CSS3](https://skills.thijs.gg/icons?i=css)](https://pt.wikipedia.org/wiki/CSS3)
 [![JavaScript](https://skills.thijs.gg/icons?i=js)](https://pt.wikipedia.org/wiki/JavaScript)
 [![VSCode](https://skills.thijs.gg/icons?i=vscode)](https://pt.wikipedia.org/wiki/Visual_Studio_Code)
-[![GitHub](https://skills.thijs.gg/icons?i=github)](https://pt.wikipedia.org/wiki/GitHub)
 ***
 #### Breve apresentação:
 
